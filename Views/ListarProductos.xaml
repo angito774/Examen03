@@ -8,19 +8,25 @@
         Title="ListarProductos" Height="450" Width="800">
     <Grid>
         <Label Content="Nombre:" HorizontalAlignment="Left" Margin="12,24,0,0" VerticalAlignment="Top"/>
-        <TextBox Text="{Binding Nombre}" HorizontalAlignment="Left" Margin="91,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Precio:" HorizontalAlignment="Left" Margin="14,70,0,0" VerticalAlignment="Top"/>
-        <TextBox Text="{Binding Precio}" HorizontalAlignment="Left" Margin="91,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Descripcion:" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
-        <TextBox Text="{Binding Descripcion}" HorizontalAlignment="Left" Margin="94,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Guardar" Command="{Binding AgregarProductoCommand}" HorizontalAlignment="Left" Margin="66,146,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
+        <TextBox Text="{Binding Nombre}" Background="LightYellow" HorizontalAlignment="Left" Margin="91,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+        <Label Content="Precio:" HorizontalAlignment="Left" Margin="21,54,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Precio}" Background="Orange" HorizontalAlignment="Left" Margin="91,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Descripcion:" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Descripcion}" Background="LightYellow" HorizontalAlignment="Left" Margin="91,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+        <Button Content="Guardar" Command="{Binding AgregarProductoCommand}" HorizontalAlignment="Left" Margin="64,132,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
+        
         <ListView ItemsSource="{Binding Productos}" Margin="13,199,134,10">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Nombre}" FontWeight="Bold" Width="100"></TextBlock>
+                        <TextBlock Text="{Binding Precio}" Foreground="Blue" Width="50"></TextBlock>
+                        <TextBlock Text="{Binding Descripcion}" FontWeight="Bold" Width="100"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
+        
 
     </Grid>
 </Window>
