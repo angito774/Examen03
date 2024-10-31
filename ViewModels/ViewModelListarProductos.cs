@@ -61,6 +61,7 @@ namespace Examen03.ViewModels
 				Precio = this.Precio,
 				Descripcion = this.Descripcion				
 			});
+			this.Nombre = string.Empty; this.Precio=string.Empty; this.Descripcion=string.Empty;
 		}
 
 		#endregion
