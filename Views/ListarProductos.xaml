@@ -1,0 +1,26 @@
+﻿<Window x:Class="Examen03.Views.ListarProductos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Examen03.Views"        
+        mc:Ignorable="d"
+        Title="ListarProductos" Height="450" Width="800">
+    <Grid>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="12,24,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Nombre}" HorizontalAlignment="Left" Margin="91,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Precio:" HorizontalAlignment="Left" Margin="14,70,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Precio}" HorizontalAlignment="Left" Margin="91,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Descripcion:" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Descripcion}" HorizontalAlignment="Left" Margin="94,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Guardar" Command="{Binding AgregarProductoCommand}" HorizontalAlignment="Left" Margin="66,146,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
+        <ListView ItemsSource="{Binding Productos}" Margin="13,199,134,10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
